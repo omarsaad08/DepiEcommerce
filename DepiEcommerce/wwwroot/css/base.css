@@ -1,0 +1,81 @@
+﻿:root {
+    --primary-color: #1DCD9F;
+    --secondary-color: #169976;
+    --bg-color: #222222;
+    --solid-black: #333333;
+    --font-family: 'Nunito';
+    --text-primary: #4e73df;
+    --text-danger: #e74a3b;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--solid-black) !important;
+}
+
+#wrapper #content-wrapper {
+    background-color: #f8f9fc;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Nav */
+nav.navbar {
+    background-color: var(--bg-color) !important;
+    color: white !important;
+}
+
+nav.navbar .container-fluid>a:first-child {
+    color: var(--primary-color) !important;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+nav.navbar .container-fluid .collapse ul {
+    gap: 10px;
+}
+
+nav.navbar .container-fluid .collapse ul a {
+    background-color: var(--secondary-color) !important;
+    display: block;
+    box-sizing: content-box;
+    border-radius: 8px;
+}
+
+nav.navbar .container-fluid .collapse ul a:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+}
+
+nav.navbar .container-fluid .collapse form button {
+    margin-right: 10px;
+}
+
+nav.navbar .container-fluid .collapse form button:hover {
+    background-color: transparent !important;
+    border-color: var(--primary-color) !important;
+    color: var(--primary-color) !important;
+}
+
+nav.navbar .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+.cntr {
+    text-align: center;
+    padding: 80px 0;
+}

@@ -1,0 +1,153 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model NavigationViewModel
+
+@inject UserManager<ApplicationUser> _userManager
+
+
+<!--Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+	<div class="container-fluid px-4 px-lg-5">
+		<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DEPI Commerce</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+				</li>
+
+				<li>
+					<a class="nav-link" asp-area="" asp-controller="Products" asp-action="Index">All Products</a>
+				</li>
+				@if (User.Identity.IsAuthenticated)
+				{
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="Orders" asp-action="Index">MyOrders</a>
+					</li>
+
+
+
+
+
+
+
+
+
+					<!-- Nav Item - Alerts -->
+					<li class="nav-item dropdown no-arrow mx-1">
+						<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fas fa-bell fa-fw"></i>
+
+							@{
+								int c = 0;
+
+								var username = User.Identity?.Name;
+								var user = await _userManager.GetUserAsync(User);
+
+								if (!string.IsNullOrWhiteSpace(username))
+								{
+
+									// var alert1 = _context.UserAlerts.FirstOrDefault(a => a.UserName == username);
+
+									@foreach (var i in Context.Request.Cookies)
+									{
+
+										if (i.Key.StartsWith($"RM_{user.Id}"))
+										{
+											var x = i.Value;
+
+											if (x != null)
+											{
+												c++;
+											}
+										}
+									}
+								}
+
+							}
+
+							<!-- Counter - Alerts -->
+							@if (c > 0)
+							{
+								<span class="badge badge-danger badge-counter">@c </span>
+							}
+						</a>
+						<!-- Dropdown - Alerts -->
+						<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+							<h6 class="dropdown-header">
+								Alerts Center
+							</h6>
+
+
+
+							@foreach (var i in Context.Request.Cookies)
+							{
+
+								if (i.Key.StartsWith($"RM_{user.Id}"))
+								{
+
+									<a class="dropdown-item d-flex align-items-center" href="#">
+										<div class="mr-3">
+											<div class="icon-circle bg-primary">
+												<i class="fas fa-file-alt text-white"></i>
+											</div>
+										</div>
+
+
+										<div>
+											@Html.Raw(i.Value.Replace("\n", "<br />"))
+										</div>
+
+
+									</a>
+
+								}
+							}
+
+
+
+
+
+
+						</div>
+					</li>
+
+
+
+
+
+
+				}
+
+
+
+			</ul>
+			<form asp-area="" asp-controller="Cart" asp-action="Index" class="d-flex">
+				<button class="btn btn-outline-dark" type="submit">
+					<i class="bi-cart-fill me-1"></i>
+					Cart
+					@if (Model.CartCount == 0)
+					{
+						<span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+
+					}
+					else
+					{
+						<span class="badge bg-dark text-white ms-1 rounded-pill">@Model.CartCount</span>
+					}
+
+
+
+				</button>
+			</form>
+
+			<partial name="_LoginPartial" />
+		</div>
+	</div>
+</nav>
+
+

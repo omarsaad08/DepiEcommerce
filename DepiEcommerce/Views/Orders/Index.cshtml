@@ -1,0 +1,59 @@
+﻿@{
+	ViewData["Title"] = "Order List";
+}
+@section Styles {
+	<link rel="stylesheet" href="~/css/base.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/table.css" asp-append-version="true" />
+}
+@model List<Order>
+
+<section class="py-5">
+	<div class="container px-4 px-lg-5">
+		<div class="row gx-4 gx-lg-5 justify-content-center">
+			<div class="col-md-12">
+				<h2 class="mb-4">Order List</h2>
+				<!-- Order List Table -->
+				<table class="table table-bordered table-hover">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Order ID</th>
+							<th scope="col">Date</th>
+							<th scope="col">Status</th>
+							<th scope="col">Total</th>
+							<th scope="col">Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var order in Model)
+						{
+							<tr>
+								<td>@order.Id</td>
+								<td>@order.CreatedAt.ToShortDateString()</td>
+								<td>
+									@if (@order.Status == "Order Placed")
+									{
+										<span class="badge bg-success text-bg-primary">@order.Status</span>
+									}
+									else if (@order.Status == "Pending")
+									{
+										<span class="badge bg-warning text-bg-primary">@order.Status</span>
+									}
+									else
+									{
+										<span class="badge bg-danger text-bg-primary">@order.Status</span>
+									}
+								</td>
+								<td>$@order.Amount</td>
+								<td>
+									<a asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id"
+										class="btn btn-primary btn-sm">View</a>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>

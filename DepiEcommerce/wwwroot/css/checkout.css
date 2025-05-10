@@ -1,0 +1,17 @@
+.row {
+    justify-content: center;
+}
+
+.row>div>div {
+    margin: 8px auto;
+    text-align: center;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--bg-color);
+    border: none;
+}
+
+.row>div>div a.btn-primary {
+    margin-bottom: 4px;
+}

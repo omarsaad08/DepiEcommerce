@@ -1,0 +1,26 @@
+.container {
+    background: var(--solid-black);
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container .card {
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 12px;
+    text-align: center;
+}
+
+.container .card img {
+    height: 200px;
+    object-fit: contain;
+
+}
+
+.container .text-danger {
+    background: var(--text-danger);
+    color: white !important;
+    border: none !important
+}

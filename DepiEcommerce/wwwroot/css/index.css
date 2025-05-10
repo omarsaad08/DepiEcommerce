@@ -1,0 +1,28 @@
+﻿section>div:first-child {
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+section>div:first-child input {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+section>div:first-child input:focus {
+    border-color: var(--primary-color);
+
+}
+
+section>div:first-child input::placeholder {
+    color: white;
+}
+
+section .card-footer a {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}

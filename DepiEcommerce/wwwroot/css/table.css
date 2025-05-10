@@ -1,0 +1,16 @@
+th {
+    background-color: var(--secondary-color) !important;
+}
+
+td:hover,
+tbody:hover,
+tr:hover {
+    color: white !important;
+    background: transparent !important;
+}
+
+.card {
+    background-color: var(--bg-color) !important;
+    border: none;
+    padding: 12px;
+}

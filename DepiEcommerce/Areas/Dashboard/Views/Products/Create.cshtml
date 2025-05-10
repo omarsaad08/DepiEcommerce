@@ -1,0 +1,72 @@
+﻿@model Product
+
+@{
+	ViewData["Title"] = "Create";
+}
+@section Styles {
+	<link rel="stylesheet" href="~/css/base.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/productForm.css" asp-append-version="true" />
+}
+<section>
+	<h1>Create</h1>
+
+	<h4>Product</h4>
+	<hr />
+	<div class="row">
+		<div class="col-md-4">
+			<form asp-action="Create" enctype="multipart/form-data">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<div class="form-group">
+					<label asp-for="Name" class="control-label"></label>
+					<input asp-for="Name" class="form-control" />
+					<span asp-validation-for="Name" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Description" class="control-label"></label>
+					<textarea asp-for="Description" class="form-control"></textarea>
+					<span asp-validation-for="Description" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Price" class="control-label"></label>
+					<input asp-for="Price" class="form-control" />
+					<span asp-validation-for="Price" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="ProductsInStock" class="control-label"></label>
+					<input asp-for="ProductsInStock" class="form-control" />
+					<span asp-validation-for="ProductsInStock" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Image" class="control-label"></label>
+					<div class="custom-file-upload">
+						<!-- Hidden file input -->
+						<input type="file" asp-for="Image" id="Image" class="file-input" />
+
+						<!-- Styled button label -->
+						<label for="Image" class="file-label btn btn-primary">
+							Choose File
+						</label>
+
+						<!-- File name display -->
+						<span class="file-name">No file chosen</span>
+					</div>
+					<span asp-validation-for="Image" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Create" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div>
+		<a asp-action="Index">Back to List</a>
+	</div>
+
+</section>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

@@ -1,0 +1,48 @@
+﻿@model LoginUserViewModel
+
+@{
+	ViewData["Title"] = "Login";
+}
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/base.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+}
+
+<section>
+	<h1 class="text-center my-5">Login</h1>
+
+	<div class="row">
+		<div class="col-md-4 text-center mx-auto">
+			<form asp-action="Login">
+				<div asp-validation-summary="All" class="text-danger"></div>
+				<div class="form-group">
+					<label asp-for="UserName" class="control-label"></label>
+					<input asp-for="UserName" class="form-control" />
+					<span asp-validation-for="UserName" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="Password" class="control-label"></label>
+					<input asp-for="Password" class="form-control" />
+					<span asp-validation-for="Password" class="text-danger"></span>
+				</div>
+
+				<div class="form-group form-check d-flex">
+					<label class="form-check-label">
+						<input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+					</label>
+					<a asp-action="Register">Create User</a>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Log in" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+</section>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
