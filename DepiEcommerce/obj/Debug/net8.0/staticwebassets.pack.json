@@ -7349,12 +7349,24 @@
       "PackagePath": "staticwebassets\\css\\base.css"
     },
     {
+      "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\cart.css",
+      "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
+      "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\checkout.css",
+      "PackagePath": "staticwebassets\\css\\checkout.css"
+    },
+    {
       "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\index.css",
       "PackagePath": "staticwebassets\\css\\index.css"
     },
     {
       "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\orders.css",
+      "PackagePath": "staticwebassets\\css\\orders.css"
     },
     {
       "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\productForm.css",
@@ -7367,6 +7379,10 @@
     {
       "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\styles.css",
       "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\css\\table.css",
+      "PackagePath": "staticwebassets\\css\\table.css"
     },
     {
       "Id": "D:\\projects\\DepiEcommerce\\DepiEcommerce\\DepiEcommerce\\wwwroot\\favicon.ico",
